@@ -27,10 +27,13 @@ boxElList.forEach(boxEl => {
 });
 /* console.log(boxElObj); */
 
-
 const charNum = Array.from(Array(26)).map((e, i) => i + 65);
 const bigChar = charNum.map((x) => String.fromCharCode(x));
 const alphabet = [];
+bigChar.forEach(element => {
+    alphabet.push(element);
+    alphabet.push(element.toLowerCase());
+});
 /* console.log(alphabet); */
 
 const guess = [];
@@ -41,6 +44,9 @@ const oldGuesses = [];
 
 var guesses = 1;
 /* increments with each guess */
+
+var won = false;
+
 
 function checkGuess(checkingArr, correctStr) {
 
@@ -92,10 +98,16 @@ function checkGuess(checkingArr, correctStr) {
 function saveGuess() {
     let result = checkGuess(guess, word);
 
-    const letterAndResult = []
+    let allCorrect = true;
+    result.forEach(checking => {
+        if (checking !== 0) {allCorrect = false;}
+    });
+    
+    if (allCorrect) {won = true;}
 
+    const letterAndResult = [];
     guess.forEach((letter, index) => {
-        letterAndResult.push([letter, result[index]])
+        letterAndResult.push([letter, result[index]]);
     });
 
     oldGuesses.push(letterAndResult);
@@ -146,15 +158,9 @@ function updateBoxes() {
 
 }
 
+function end() {document.removeEventListener("keydown", keydownHandle);}
 
-
-
-bigChar.forEach(element => {
-    alphabet.push(element);
-    alphabet.push(element.toLowerCase());
-});
-
-document.addEventListener("keydown", e => {
+const keydownHandle = e => {
 
     if (e.key === "Enter") {
         if (guess.length !== 5) {
@@ -162,6 +168,9 @@ document.addEventListener("keydown", e => {
         };
 
         saveGuess();
+        if (won) {
+            end();
+        }
     };
 
     if (e.key === ("Backspace" || "Delete")) {
@@ -180,6 +189,10 @@ document.addEventListener("keydown", e => {
 
         return;
     };
-});
+
+
+}
+
+document.addEventListener("keydown", keydownHandle);
 
 
