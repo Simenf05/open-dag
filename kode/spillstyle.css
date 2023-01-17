@@ -21,3 +21,15 @@ body {
     border: 3px grey solid;
     border-radius: 10%;
 }
+
+.correct {
+    background-color: green;
+}
+
+.almost {
+    background-color: yellow;
+}
+
+.wrong {
+    background-color: red;
+}
