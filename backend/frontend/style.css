@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(0, 157, 255);
+}
+
+.logo{
+    display: flex;
+    height: 50px;
+    padding-right: 30px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-around;
+    flex: 3;
+}
+
+li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+li a{
+    text-decoration: none;
+    background-color: red;
+    padding: 14px 25px;
+    color: rgb(255, 255, 255);
+    border: 5px solid black ;
+    transition: transform 0.5s ease;
+
+}
+li a:hover{
+    background-color: rgb(200, 9, 9);
+    transform: scale(1.1)
+
+}
+.active{
+    background-color: brown;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+.images{
+    
+}
