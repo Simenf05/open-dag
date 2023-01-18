@@ -1,5 +1,5 @@
 
-const word = ",.-_!".toLowerCase(); 
+const word = "simen".toLowerCase(); 
 
 const boxesDivEl = document.querySelector("#boxes");
 
