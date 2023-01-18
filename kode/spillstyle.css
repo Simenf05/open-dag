@@ -1,11 +1,4 @@
 
-body {
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-}
-
 #boxes {
     display: flex;
     justify-content: center;
