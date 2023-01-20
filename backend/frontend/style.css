@@ -3,7 +3,7 @@
     height: auto;
     justify-content: center;
     align-items: center;
-    border: 10px solid rgb(0, 157, 255);
+    border: 10px solid #81D3EE;
 }
 
 .logo{
@@ -26,7 +26,7 @@ li{
 
 li a{
     text-decoration: none;
-    background-color: red;
+    background-color: #81D3EE;
     padding: 14px 25px;
     color: rgb(255, 255, 255);
     border: 5px solid black ;
@@ -34,21 +34,18 @@ li a{
 
 }
 li a:hover{
-    background-color: rgb(200, 9, 9);
+    background-color: #1CA0B4;
     transform: scale(1.1)
 
 }
 .active{
-    background-color: brown;
+    background-color: purple;
 }
 
 #content{
     display: flex;
     justify-content: center;
     margin-top: 10%;
-}
-.images{
-    
 }
 
 #banner{
@@ -59,4 +56,14 @@ li a:hover{
     background-attachment: fixed;
     color: black;
   }
+
+.images{
+    display: flex;
+    flex-direction: row;
+}
+#content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
