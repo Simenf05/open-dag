@@ -112,13 +112,21 @@ function initialize(apiword) {
     }
 
 
-    function end() {document.removeEventListener("keydown", keydownHandle);}
+    function endWon() {
+        document.removeEventListener("keydown", keydownHandle);
+        document.querySelector("#end").innerHTML = "Du vant!!!";
+    }
+
+    function endLost() {
+        document.removeEventListener("keydown", keydownHandle);
+        document.querySelector("#end").innerHTML = `Du tapte. Ordet var ${word}`;
+    }
 
 
     const keydownHandle = e => {
 
         async function postWord(posting) {
-            const word = posting.toLowerCase()
+            const word = posting.toLowerCase();
 
             const res = await fetch(window.location.origin + "/api/submit", {
                 method: 'POST',
@@ -139,8 +147,14 @@ function initialize(apiword) {
                 if (value === 0) {return;};
 
                 saveGuess();
+                if (!(guesses === tries + 1)) {
+                    return;
+                }
                 if (won) {
-                    end();
+                    endWon();
+                }
+                else {
+                    endLost();
                 }
 
 
@@ -170,11 +184,12 @@ function initialize(apiword) {
 
     }
 
+    const tries = 6;
     const word = apiword;
 
     const boxesDivEl = document.querySelector("#boxes");
 
-    const dimentions = [word.length, 6];
+    const dimentions = [word.length, tries];
 
     for (let i=1; i <= dimentions[0]; i++) {
         let box = document.createElement("div");
