@@ -56,3 +56,9 @@ li a:hover{
     display: flex;
     justify-content: center;
 }
+
+.textbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
