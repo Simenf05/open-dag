@@ -64,6 +64,7 @@ li a:hover{
 #content{
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 .tutorial{
     display: flex;
