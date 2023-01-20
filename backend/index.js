@@ -3,13 +3,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const redis = require('redis');
 
+const url = `redis://192.168.0.101:6379`;
+
 const redisClient = redis.createClient({
-    host: '192.168.0.101',
-    port: '6379'
+    url
 });
 
 redisClient.on('error', err => console.log(err));
-
 redisClient.connect();
 
 
