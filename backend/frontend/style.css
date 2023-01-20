@@ -50,3 +50,13 @@ li a:hover{
 .images{
     
 }
+
+#banner{
+    background: url("bilder/IM_Kuben-vgs.png") no-repeat;
+    height: 100vh;
+    background-size: 30%;
+    background-position: center;
+    background-attachment: fixed;
+    color: black;
+  }
+
