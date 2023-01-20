@@ -37,13 +37,18 @@ app.use(express.static(path.join(__dirname, 'frontend')))
 
 
 app.get("/api/word", (req, res) => {
-    getRandomWord().then(randomWord => {
-        res.json({"word": randomWord});
+    getRandomWord()
+    .then(randomWord => {
+        res.json({"word": randomWord})
+    })
+    .catch(err => {
+        console.log(err);
     })
 })
 
 app.post("/api/submit", (req, res) => {
-    checkRedis(req.body.word).then(iskey => res.json({"value": iskey}));
+    checkRedis(req.body.word)
+    .then(iskey => res.json({"value": iskey}));
 })
 
 app.listen(port, () => {
