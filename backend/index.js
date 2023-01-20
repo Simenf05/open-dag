@@ -21,6 +21,7 @@ async function checkRedis(key) {
 async function getRandomWord() {
     const key = await redisClient.RANDOMKEY();
     const word = await redisClient.get(key);
+    console.log(word);
     return word;
 }
 
