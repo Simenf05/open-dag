@@ -54,11 +54,12 @@ li a:hover{
 
 .tutorial{
     display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .textbox{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
