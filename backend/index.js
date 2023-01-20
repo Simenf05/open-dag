@@ -4,10 +4,8 @@ const bodyParser = require('body-parser');
 const redis = require('redis');
 
 const redisClient = redis.createClient({
-    
-    host: 'localhost',
+    host: '192.168.0.101',
     port: '6379'
-    
 });
 
 redisClient.on('error', err => console.log(err));
@@ -41,7 +39,10 @@ app.use(express.static(path.join(__dirname, 'frontend')))
 app.get("/api/word", (req, res) => {
     getRandomWord()
     .then(randomWord => {
-        res.json({"word": randomWord});
+        res.json({"word": randomWord})
+    })
+    .catch(err => {
+        console.log(err);
     })
 })
 
