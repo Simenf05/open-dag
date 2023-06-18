@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const redis = require('redis');
 
-const url = `redis://192.168.0.101:6379`;
+const url = `redis://localhost:6379`;
 // 192.168.0.101
 const redisClient = redis.createClient({
     url
